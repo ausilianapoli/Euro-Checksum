@@ -13,14 +13,13 @@
 		<p>€uro Checksum verifies the serial number of your Euro banknotes; if the checksum is correct, the banknotes is not counterfeit (probably).</p>
 		<p>There is maths behind the serial number and this service checks it. Further information <a href="https://github.com/ausilianapoli/Euro-Checksum/blob/master/README.md">here</a>.</p>
 			<p id="sn">Insert here your serial number (12 characters):</p>
-			<form action="" method="get" id="sn_form">
-				<input type="" name="serial number" minlength="12" maxlength="12" value="SA2160296285"><br><br>
+			<form id="sn_form">
+				<input id="input" name="serial number" minlength="12" maxlength="12" value="SA2160296285"><br><br>
 				<input type="button" onclick="checker()" value="Submit" id="submit">
 				<input type="button" onclick="location.reload()" name="reset" id="reset" value="Reset">
 			</form>
 		<p id="result"></p>
-		<p id="posResult">
-		</p>
+		<p id="posResult"></p>
 		<p id="negResult"></p>
 	</div>
 	<script type="text/javascript">
