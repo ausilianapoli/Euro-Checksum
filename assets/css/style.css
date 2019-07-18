@@ -1,0 +1,54 @@
+body{
+	background-color: Plum;
+	background-image: url("../img/bg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: Arial, Tahoma, Helvetica, sans-serif;
+}
+
+div{
+	border: 1px solid gray;
+	margin: 30px;
+	padding: 15px;
+	background-color: white;
+	opacity: 0.6;
+}
+
+img{
+	width: 20%;
+	height: 20%;
+	object-position: center;
+}
+
+#sn, #sn_form{
+	text-align: center;
+}
+
+#submit{
+	color: green;
+}
+
+#reset{
+	color: red;
+}
+
+#posResult{
+	text-align: center;
+	color: green;
+	font-weight: bold;
+}
+
+#negResult{
+	text-align: center;
+	color: red;
+	font-weight: bold;
+}
+
+#cleaner{
+	text-align: center;
+	font-weight: bold;
+	width: 200%;
+	height: auto;
+}

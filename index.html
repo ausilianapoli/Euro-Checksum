@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/media_query.css">
+	<title>€uro Checksum</title>
+</head>
+<body>
+	<div>
+		<h1>€uro Checksum</h1>
+		<p>€uro Checksum verifies the serial number of your Euro banknotes; if the checksum is correct, the banknotes is not counterfeit (probably).</p>
+		<p>There is maths behind the serial number and this service checks it.</p>
+			<p id="sn">Insert here your serial number (12 characters):</p>
+			<form action="" method="get" id="sn_form">
+				<input type="" name="serial number" minlength="12" maxlength="12" value="SA2160296285"><br><br>
+				<input type="button" onclick="checker()" value="Submit" id="submit">
+				<input type="button" onclick="location.reload()" name="reset" id="reset" value="Reset">
+			</form>
+		<p id="result"></p>
+		<p id="posResult">
+		</p>
+		<p id="negResult"></p>
+	</div>
+	<script type="text/javascript">
+		function checker(){
+			/*constants*/
+			const LENGTH = 12;
+			const SERIALNUMBER_REGEX = /^([D-HL-NPS-Z])([0-9]|[A-Z])([0-9]{10}$)/i
+
+			/*extract the input data*/
+			var x = document.getElementById("sn_form");
+			var sn = x.elements[0].value;
+			var text = ""
+			//console.log(sn.length);
+
+			/*check the length*/
+			if (sn.length != LENGTH){
+				text += "ERROR: The serial number <bold>MUST</bold> contains 12 characters" + "<br>";
+				document.getElementById("result").innerHTML = text;
+				return;
+			}
+			else{
+				text += "The serial number is: " + sn + "<br>";
+				document.getElementById("result").innerHTML = text;
+			}
+			//console.log(x);
+			//console.log(x.length);
+			
+			/*check the regular expression of the serial number*/
+			if(SERIALNUMBER_REGEX.test(sn)){
+				/*find country code*/
+				var code = sn[0].toUpperCase();
+				var bank;
+				if(code == "P"){
+					code = 1;
+					bank = "Netherlands";
+				}
+				else if(code == "Y"){
+					code = 1;
+					bank = "Greece"
+				}
+				else if(code == "G"){
+					code = 1;
+					bank = "Cyprus";
+				}
+				else if(code == "F"){
+					code = 2;
+					bank = "Malta";
+				}
+				else if(code == "X"){
+					code = 2;
+					bank = "Germany";
+				}
+				else if(code == "E"){
+					code = 3;
+					bank = "Slovakia"
+				}
+				else if(code == "N"){
+					code = 3;
+					bank = "Austria";
+				}
+				else if(code == "W"){
+					code = 3;
+					bank = "Danmark";
+				}
+				else if(code == "D"){
+					code = 4;
+					bank = "Estonia";
+				}
+				else if(code == "M"){
+					code = 4;
+					bank = "Portugal";
+				}
+				else if(code == "V"){
+					code = 4;
+					bank = "Spain";
+				}
+				else if(code == "U"){
+					code = 5;
+					bank = "France";
+				}
+				else if(code == "L"){
+					code = 5;
+					bank = "Finland";
+				}
+				else if(code == "T"){
+					code = 6;
+					bank = "Ireland";
+				}
+				else if(code == "S"){
+					code = 7;
+					bank = "Italy";
+				}
+				else if(code == "H"){
+					code = 9;
+					bank = "Slovenia";
+				}
+				else if(code == "Z"){
+					code = 9;
+					bank = "Belgium";
+				}
+
+				/*find serie banknote*/
+				var serie = sn[1].toUpperCase();
+				if(serie >= 'A' && serie <= 'Z'){
+					text += "The banknote belongs to second (or Europa) serie." + "<br>";
+					serie = serie.charCodeAt(0);
+					serie = serie % 10 + Math.floor(serie / 10);
+				}
+				else{
+					text += "The banknote belongs to first serie." + "<br>";
+					serie = parseInt(serie);
+				}
+				//console.log(serie);
+
+				/*calculate sum and root*/
+				var sum = serie;
+				//console.log(sum);
+				var i;
+				for(i = 2; i<LENGTH; i++) sum += parseInt(sn[i]);
+				//console.log(sum);
+				while(sum > 9) sum = sum % 10 + Math.floor(sum / 10);
+				console.log(sum);
+
+				/*verify code*/
+				if(sum == code){
+					var posResult = "The serial number of the banknote is valid!" + "<br>" + "The corresponding country is " + bank + "." + "<br>";
+					document.getElementById("posResult").innerHTML = posResult;
+					var img = document.createElement("img");
+					img.src = "assets/img/" + bank + ".svg";
+					var src = document.getElementById("posResult");
+					src.appendChild(img);
+				}
+				else{
+					var negResult = "The serial number of the banknote is not valid!" + "<br>";
+					document.getElementById("negResult").innerHTML = negResult;
+					var img = document.createElement("img");
+					img.src = "assets/img/x.png";
+					var src = document.getElementById("negResult");
+					src.appendChild(img);
+				}
+			}
+			else{
+				text += "ERROR: The serial number is not correct."
+				document.getElementById("result").innerHTML = text;
+				return;
+			}
+			document.getElementById("result").innerHTML = text;
+		}
+	</script>
+</body>
+</html>
