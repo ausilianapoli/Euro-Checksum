@@ -19,4 +19,4 @@ Each country (i.e. first char) has a control code (for example the letter of Ita
 - *the sum is: 6+5+2+1+6+0+2+9+6+2+8+5=52 -> 5+2=7*
 - *the obtained root coincides with the control code.*
 
-Tables of control codes at (Wikipedia page)[https://en.wikipedia.org/wiki/Euro_banknotes].
+Tables of control codes at [Wikipedia page](https://en.wikipedia.org/wiki/Euro_banknotes).
