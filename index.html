@@ -27,7 +27,7 @@
 		function checker(){
 			/*constants*/
 			const LENGTH = 12;
-			const SERIALNUMBER_REGEX = /^([D-HL-NPS-Z])([0-9]|[A-Z])([0-9]{10}$)/i
+			const SERIALNUMBER_REGEX = /^([D-L-NPS-Z])([0-9]|[A-Z])([0-9]{10}$)/i
 
 			/*extract the input data*/
 			var x = document.getElementById("sn_form");
@@ -109,9 +109,17 @@
 					code = 6;
 					bank = "Ireland";
 				}
+				else if(code == "K"){
+					code = 6;
+					bank = "Sweden";
+				}
 				else if(code == "S"){
 					code = 7;
 					bank = "Italy";
+				}
+				else if(code == "J"){
+					code = 7;
+					bank = "United Kingdom";
 				}
 				else if(code == "H"){
 					code = 9;
@@ -122,21 +130,21 @@
 					bank = "Belgium";
 				}
 
-				/*find serie banknote*/
-				var serie = sn[1].toUpperCase();
-				if(serie >= 'A' && serie <= 'Z'){
-					text += "The banknote belongs to second (or Europa) serie." + "<br>";
-					serie = serie.charCodeAt(0);
-					serie = serie % 10 + Math.floor(serie / 10);
+				/*find series banknote*/
+				var series = sn[1].toUpperCase();
+				if(series >= 'A' && series <= 'Z'){
+					text += "The banknote belongs to second (or Europa) series." + "<br>";
+					series = series.charCodeAt(0);
+					series = series % 10 + Math.floor(series / 10);
 				}
 				else{
-					text += "The banknote belongs to first serie." + "<br>";
-					serie = parseInt(serie);
+					text += "The banknote belongs to first series." + "<br>";
+					series = parseInt(series);
 				}
-				//console.log(serie);
+				//console.log(series);
 
 				/*calculate sum and root*/
-				var sum = serie;
+				var sum = series;
 				//console.log(sum);
 				var i;
 				for(i = 2; i<LENGTH; i++) sum += parseInt(sn[i]);
