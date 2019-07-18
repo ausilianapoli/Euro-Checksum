@@ -162,6 +162,7 @@
 					document.getElementById("posResult").innerHTML = posResult;
 					var img = document.createElement("img");
 					img.src = "assets/img/" + bank + ".svg";
+					img.alt = "Flag of " + bank;
 					var src = document.getElementById("posResult");
 					src.appendChild(img);
 				}
@@ -170,6 +171,7 @@
 					document.getElementById("negResult").innerHTML = negResult;
 					var img = document.createElement("img");
 					img.src = "assets/img/x.png";
+					img.alt = "Red 'x' as wrong sign";
 					var src = document.getElementById("negResult");
 					src.appendChild(img);
 				}
