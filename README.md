@@ -4,7 +4,7 @@ Euro (€) is the currency of the euro area and has been in circulation since 20
 The euro notes contain many complex security features such as serial number, watermarks, invisible ink characteristics, holograms, optically variable inks and microprinting that document their authenticity.  
 There are two series of euro banknotes:
 - 1st series issued from 2002;
-- 2st series or Europa series issued 2013.
+- 2st series or Europa series issued from 2013.
 
 ## Checksum
 Each note has a unique serial number of 12 characters:
