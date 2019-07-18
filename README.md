@@ -21,4 +21,4 @@ Each country (i.e. first char) has a control code (for example the letter of Ita
 
 Tables of control codes and further information at [Wikipedia page](https://en.wikipedia.org/wiki/Euro_banknotes).  
 
-The website is Poc for this project.  
+The website is PoC for this project.  
