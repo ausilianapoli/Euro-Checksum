@@ -22,6 +22,27 @@ img{
 	object-position: center;
 }
 
+footer{
+	font-weight: bold;
+	text-shadow: 0 0 5px black; 
+}
+
+a:link{
+	color: navy;
+}
+
+a:visited{
+	color: darkgreen;
+}
+
+a:hover{
+	color: olive;
+}
+
+a:active{
+	color:aqua;
+}
+
 #sn, #sn_form{
 	text-align: center;
 }
