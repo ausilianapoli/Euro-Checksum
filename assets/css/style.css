@@ -1,7 +1,7 @@
 body{
-	background-color: Plum;
-	background-image: url("../img/bg.png");
-	background-position: center;
+	background-color: plum;
+	background-image: url("../img/bg-mobile.png");
+	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -14,6 +14,16 @@ div{
 	padding: 15px;
 	background-color: white;
 	opacity: 0.6;
+}
+
+input{
+	border: 2px solid black;
+	box-sizing: border-box;
+	padding: 12px 20px;
+}
+
+input:focus{
+	border-color: plum;
 }
 
 img{
@@ -48,11 +58,21 @@ a:active{
 }
 
 #submit{
-	color: green;
+	color: white;
+	background-color: green;
+}
+
+#submit:focus{
+	border-color: green;
 }
 
 #reset{
-	color: red;
+	color: white;
+	background-color: red;
+}
+
+#reset:focus{
+	border-color: red;
 }
 
 #posResult{
