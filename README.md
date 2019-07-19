@@ -20,5 +20,4 @@ Each country (i.e. first char) has a control code (for example the letter of Ita
 - *the obtained root coincides with the control code.*
 
 Tables of control codes and further information at [Wikipedia page](https://en.wikipedia.org/wiki/Euro_banknotes).  
-
-The website is PoC for this project.  
+The [website](http://eurochecksum.altervista.org/) is PoC for this project.  
