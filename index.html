@@ -31,7 +31,7 @@
 		function checker(){
 			/*constants*/
 			const LENGTH = 12;
-			const SERIALNUMBER_REGEX = /^([D-L-NPS-Z])([0-9]|[A-Z])([0-9]{10}$)/i
+			const SERIALNUMBER_REGEX = /^([D-HJ-NPR-Z])([0-9]|[A-Z])([0-9]{10}$)/i
 
 			/*extract the input data*/
 			var x = document.getElementById("sn_form");
@@ -124,6 +124,10 @@
 				else if(code == "J"){
 					code = 7;
 					bank = "United Kingdom";
+				}
+				else if(code == "R"){
+					code = 8;
+					bank = "Luxembourg";
 				}
 				else if(code == "H"){
 					code = 9;
