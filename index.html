@@ -47,6 +47,10 @@
 	</div>
 	<script>
 		function checker(){
+			/*clean paragraphs of positive and negative result*/
+			document.getElementById("posResult").innerHTML = "";
+			document.getElementById("negResult").innerHTML = "";
+
 			/*constants*/
 			const LENGTH = 12;
 			const SERIALNUMBER_REGEX = /^([D-HJ-NPR-Z])([0-9]|[A-Z])([0-9]{10}$)/i
