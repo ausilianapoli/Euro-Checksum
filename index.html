@@ -46,6 +46,14 @@
 		<p id="negResult"></p>
 	</div>
 	<script>
+		var input = document.getElementById("input");
+		input.addEventListener("keypress", function(event){
+			if(event.keyCode === 13){
+				event.preventDefault();
+				document.getElementById("submit").click();
+			}
+		})
+
 		function checker(){
 			/*clean paragraphs of positive and negative result*/
 			document.getElementById("posResult").innerHTML = "";
