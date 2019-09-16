@@ -16,6 +16,14 @@ div{
 	opacity: 0.6;
 }
 
+h1{
+	font-size: 4vw;
+}
+
+p{
+	font-size: 2vw;
+}
+
 input{
 	border: 2px solid black;
 	box-sizing: border-box;
@@ -27,8 +35,8 @@ input:focus{
 }
 
 img{
-	width: 20%;
-	height: 20%;
+	max-width: 20%;
+	height: auto;
 	object-position: center;
 }
 
